@@ -1,0 +1,21 @@
+
+*{
+    margin-left: 0%;
+    padding-left: 0%;
+    margin-top: 20px;
+  
+}
+#slider{
+    padding-right: 50px;
+}
+body{
+    /* background-color:#eceff1; */
+}
+
+
+
+@media only screen and (device-width: 768px) {
+   
+    
+
+}

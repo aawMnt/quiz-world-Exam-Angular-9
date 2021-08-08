@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+body{
+    background-color:#f3e5f5;
+    /* padding-bottom: 220px; */
+    height: 100vh;
+}
+ /* #card{
+    background-color: #e0f7fa; 
+     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../../../assets/img/question.jpg");
+    background-repeat: no-repeat;
+}  */
+
+.log-in{
+    text-align: center;
+    font-family: 'Carter One', cursive;
+    font-size: 30px;
+    color:#2c387e;
+    text-transform: capitalize;
+    
+}
+
+form  mat-form-field input{
+    font-family: 'Bree Serif', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 20px;
+    
+}
+
+

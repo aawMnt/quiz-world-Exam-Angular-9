@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+.example-header-image {
+    background-image: url('../../../../assets/img/online-test.png');
+    background-size: cover;
+  }
+
+  
+
+  @media only screen and (device-width: 768px) {
+    #card{
+             padding-right: 170px;
+    }
+  }
+
+  #page-title h1{
+    color: #ffc107;
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    margin-top: 30px;
+    text-decoration: underline;
+    letter-spacing: 6px;
+  }
+  .my-pagination /deep/ .ngx-pagination .current {
+    background: #ab003c;
+  }
+ #card{
+   background-color: #90a4ae;
+ }
+
+
+
+
+
+

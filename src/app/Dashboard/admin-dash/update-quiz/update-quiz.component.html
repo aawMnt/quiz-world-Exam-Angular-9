@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <mat-card>
+        <h1>Update New Quiz</h1>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <!-- *********************************************************Form Start**********************************************************************                     -->
+                    <form *ngIf="quiz" #quForm="ngForm" (ngSubmit)="quClick(quForm);"  >
+
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Enter Title</mat-label>
+                            <input matInput placeholder="title" [(ngModel)]="quiz.title" name="title" required>
+                            <mat-icon matSuffix>title</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Add Description</mat-label>
+                            <textarea matInput style="padding-bottom: 100px;" [(ngModel)]="quiz.description"
+                                name="description" required></textarea>
+                            <mat-icon matSuffix>description</mat-icon>
+                        </mat-form-field><br>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field appearance="outline" class="w-50">
+                                    <mat-label>Number Of Question</mat-label>
+                                    <input type="number" matInput placeholder="question"
+                                        [(ngModel)]="quiz.numberOfQuestions" name="numberOfQuestions">
+                                    <mat-icon matSuffix> not_listed_location</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field appearance="outline" class="w-50">
+                                    <mat-label>Enter Max Marks</mat-label>
+                                    <input type="number" matInput placeholder="marks" [(ngModel)]="quiz.maxMarks"
+                                        name="maxMarks">
+                                    <mat-icon matSuffix> not_listed_location</mat-icon>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <!-- active filed -->
+                        <mat-slide-toggle class="example-margin mt-4 " [(ngModel)]="quiz.active" name="active">
+                            Publish Status!
+                        </mat-slide-toggle><br>
+
+                        <!-- category select -->
+                        <mat-form-field appearance="fill" class="mt-4 w-100">
+                            <mat-label>Categories</mat-label>
+                            <mat-select [(ngModel)]="quiz.category.id" name="category">
+                                <mat-option *ngFor="let obj of catg" [value]="obj.id">
+                                    {{obj.title}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary"  [disabled]="quForm.invalid"> Save Update</button>
+                        </div>
+
+                    </form>
+                    <!-- ***********************************************************Form End***********************************************************************************                    -->
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+
+</body>
+
+</html>

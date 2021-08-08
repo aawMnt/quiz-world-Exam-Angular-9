@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+#instructionsQuiz ul {
+
+    text-transform: capitalize;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    word-spacing: 5px;
+    
+}
+#instructionsQuiz ul li b{
+color: darkorange;
+}
+.mat-title{
+    text-transform: capitalize;
+    text-align: center;
+    color: crimson;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+}
+#mat-card{
+    background-color: #eceff1;
+    margin-top: 30px;
+}
+.mat-card-subtitle{
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+#instructionsQuiz h1{
+    font-family: 'Oswald', sans-serif;
+    color: chocolate;
+}
+
+#instructionsQuiz p{
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 15px;
+    text-transform: capitalize;
+}

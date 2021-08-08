@@ -1,0 +1,40 @@
+<mat-card id="card" style="background-color: #90a4ae; margin-top: 30px;">
+    <mat-action-list>
+
+        <div mat-subheader> Menu </div>
+
+        <div class="sideBar">
+
+            <button mat-list-item routerLink="/userDashboard/0">
+                <mat-icon mat-list-item>book</mat-icon>
+                All Categories
+            </button>
+
+            <div class="color">
+
+
+                <button mat-list-item [routerLink]=" '/userDashboard/'+ obj.id" *ngFor="let obj of catg">
+                    <mat-icon mat-list-item>book</mat-icon>
+                    {{obj.title}}
+                </button>
+            </div>
+
+             <div class="result">
+                <button  mat-list-item (click)="result()">
+                    <mat-icon mat-list-item>history</mat-icon>
+                    Exam History
+                </button>
+
+             </div>
+
+        </div>
+
+        <button mat-list-item style="color:#d50000;" (click)="logout()">
+            <mat-icon mat-list-item >logout</mat-icon>
+            Logout
+        </button>
+        
+
+
+    </mat-action-list>
+</mat-card>

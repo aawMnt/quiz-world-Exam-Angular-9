@@ -1,0 +1,96 @@
+<!-- <mat-toolbar color="primary">
+  <div class="row">
+    <div class="col-md-6">
+      <a routerLink="" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+    style="text-decoration: none;">
+    <mat-icon style="color:gold">home</mat-icon>
+  </a>
+  
+  
+    </div>
+    <div class="col-md-6"><span style="color: gold;">QUIZ</span></div>
+  </div>
+  <span class="example-spacer"></span>
+
+  <button mat-stroked-button color="accent">About</button>&nbsp;&nbsp;
+
+  <a *ngIf="isUserActiveLogin" routerLink="login" mat-stroked-button color="warn"
+    style="text-decoration: none; border-color: sandybrown; color:gold">Login</a>&nbsp;&nbsp;
+
+  <a *ngIf="isUserActiveLogin" routerLink="signup" mat-stroked-button color="warn"
+    style="text-decoration: none; border-color: sandybrown; color: gold;">Register</a>
+
+
+  <h1 *ngIf="isUserActive" style="font-weight: bold; cursor: pointer;" routerLink="/adminDashboard/">
+    Hello,{{user.username}}
+  </h1>
+
+  <a mat-stroked-button class="ml-2" (click)="logout()" *ngIf="isUserActive"
+    style="color:#d50000; text-decoration: none; border-color: blanchedalmond; ">
+    <mat-icon>logout</mat-icon>
+    <b>Log Out</b>
+
+  </a>
+
+
+</mat-toolbar> -->
+<mat-toolbar color="primary">
+
+  <!-- title and log of site  -->
+
+  <img src="../../../assets/img/quizLogo.png" alt="" height="45px">
+
+
+  <span class="example-spacer"></span>
+  <div fxHide.gt-xs>
+
+
+    <!-- mat side bar for responsive site  -->
+    <div class="row">
+      <h1 *ngIf="isUserActive" style="font-weight: bold; cursor: pointer;">
+        Hello,{{user.username}}
+      </h1>&nbsp; &nbsp;
+
+      <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon style="font-size: 30px; color: gold;">menu</mat-icon>
+      </button>
+    </div>
+
+
+  </div>
+
+  <!-- nav-bar buttons  -->
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+
+      <li>
+        <a *ngIf="isUserActiveLogin" routerLink="" mat-stroked-button color="warn"
+          style="text-decoration: none; border-color: lightcoral; color:gold">Home</a>
+      </li>
+      <li>
+        <a *ngIf="isUserActiveLogin" routerLink="about" mat-stroked-button color="warn"
+          style="text-decoration: none; border-color: hotpink; color:gold">About</a>
+      </li>
+      <li>
+        <a *ngIf="isUserActiveLogin" routerLink="login" mat-stroked-button color="warn"
+          style="text-decoration: none; border-color: sandybrown; color:gold">Login</a>
+      </li>
+      <li>
+        <a *ngIf="isUserActiveLogin" routerLink="signup" mat-stroked-button color="warn"
+          style="text-decoration: none; border-color: sandybrown; color: gold;">Register</a>
+      </li>
+      <li>
+        <h1 *ngIf="isUserActive" style="font-weight: bold;">
+          Hi,{{user.username}}
+        </h1>
+      </li>
+      <li>
+        <a mat-stroked-button class="ml-2" (click)="logout()" *ngIf="isUserActive"
+          style="color:#d50000; text-decoration: none; border-color: blanchedalmond; ">
+          <mat-icon>logout</mat-icon>
+          <b>Log Out</b>
+        </a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

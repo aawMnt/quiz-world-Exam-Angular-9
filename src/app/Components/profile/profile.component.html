@@ -1,0 +1,50 @@
+<mat-card>
+    <h1 style="color: #00b8d4; text-align: center; font-weight:bold;">Your Profile Details</h1>
+
+    <!-- {{user | json}} -->
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="../../../assets/img/profile.jpg" alt=""
+                        style="max-width: 200px; max-height: 200px; border: 2px solid black; border-radius: 50%;">
+                    <h1>{{user.firstName}}&nbsp;&nbsp;{{user.lastName}}</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 offset-md-1">
+
+                        <table class="table table-striped text-center">
+                            <tr>
+                                <td><b>Username</b></td>
+                                <td>{{user.username}}</td>
+                            </tr>
+
+                            <tr>
+                                <td><b>UserId</b></td>
+                                <td>{{user.id}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Phone No.</b></td>
+                                <td>{{user.phoneNo}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Role</b></td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Status</b></td>
+                                <td>{{user.enabled?"ACTIVE":"NOTACTIVE"}}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-card-actions class="text-center">
+            <button mat-raised-button color="primary">Update</button>
+            <button mat-raised-button color="warn">SHARE</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>

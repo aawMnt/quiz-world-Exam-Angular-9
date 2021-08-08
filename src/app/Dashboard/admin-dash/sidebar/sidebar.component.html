@@ -1,0 +1,47 @@
+<mat-card id="card">
+    <mat-action-list>
+
+        <div mat-subheader style="color: #00b8d4"> Menu </div>
+
+      <div class="sideBar">
+        <button mat-list-item routerLink="/adminDashboard/">
+            <mat-icon mat-list-item>home</mat-icon>
+            Home
+        </button>
+
+        <button mat-list-item routerLink="/adminDashboard/profile">
+            <mat-icon mat-list-item>perm_identity</mat-icon>
+            Profile
+        </button>
+
+        <button mat-list-item routerLink="/adminDashboard/categories">
+            <mat-icon mat-list-item>category</mat-icon>
+            Categories
+        </button>
+        <button mat-list-item routerLink="/adminDashboard/add-categories">
+            <mat-icon mat-list-item>assignment_turned_in</mat-icon>
+            Add Categories
+        </button>
+        <button mat-list-item routerLink="/adminDashboard/view-quiz">
+            <mat-icon mat-list-item>quiz</mat-icon>
+            View Quiz
+        </button>
+        <button mat-list-item routerLink="/adminDashboard/add-quiz">
+            <mat-icon mat-list-item>post_add</mat-icon>
+            Add Quiz
+        </button>
+        <button mat-list-item routerLink="/adminDashboard/usersHistory">
+            <mat-icon mat-list-item>history</mat-icon>
+            Exam History
+        </button>
+       
+      </div>
+
+        <button mat-list-item style="color:#d50000;" (click)="logout()">
+            <mat-icon mat-list-item>logout</mat-icon>
+            Logout
+        </button>
+
+
+    </mat-action-list>
+</mat-card>

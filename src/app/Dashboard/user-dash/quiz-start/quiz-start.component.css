@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body{
+    background-color: #cfd8dc;
+    height: auto;
+    /* padding: 100%; */
+    
+}
+
+
+
+#a{
+    background-color: #b0bec5;
+    margin-top: 20%;
+}
+
+
+#a mat-icon{
+    font-size: 80px;
+    
+}
+#a h1{
+    color: #01579b;
+}
+#a h1 span{
+
+    text-transform: uppercase;
+}
+#a b{
+    font-size: 50px;
+
+}
+#resultCard{
+    background-color: #e0e0e0;
+}
+#resultCard h1{
+    color: #76ff03;
+}
+#resultText h2{
+    color:#00e676 ;
+}
+
+
+#resultText h2 span{
+    color: #212121;
+    font-weight: bold;
+}
+
+#resultText h2 b{
+    font-size: 60px;
+    margin-left: 10px;
+   
+}
+
+#titleCard{
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #546e7a;
+    margin-top: 20px;
+    
+}
+#titleCard h1 b span{
+    
+    color: #ffd740;
+
+}
+#titleCard h1 b {
+    color: #ff7043;
+
+}
+#qCard{
+    background-color: #e0e0e0;
+    color: #00695f;
+    font-family: 'Merriweather', serif;
+}
+#qCard p{
+    color: #212121;
+    font-weight: bold;
+}
+
+#result-container{
+    padding-bottom: 250px;
+}
+.instructions ul li {
+     color: #ff5722;
+     font-family: 'Asap', sans-serif;
+}
+.instructions {
+    background-color: 
+    #b0bec5
+    
+}
+#timer{
+    background-color: #b0bec5;
+}
+#timer mat-card-title{
+    font-weight: bold;
+}
+
+#timer mat-card-subtitle{
+    color:  #33691e;
+    font-family: 'Asap', sans-serif;
+    
+
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #ab003c;
+  }
+  #qCard p span {
+      word-spacing: 2px;
+      font-family: 'Merriweather', serif;
+      text-transform: inherit;
+  }
+  #level h1{
+    font-family: 'Bebas Neue', cursive;
+  }
+  #level h1 span{
+    font-family: 'Bebas Neue', cursive;
+}

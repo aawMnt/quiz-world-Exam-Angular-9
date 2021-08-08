@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+
+
+#card{
+    background-color: dimgrey;
+    
+
+}
+
+.sideBar button{
+    color:snow;
+    font-family: 'Titillium Web', sans-serif;
+}
+@media only screen and (device-width: 768px) {
+    #card{
+        margin: 0%;
+        padding-left: 0%;
+        padding-right: 120px;
+       
+    }
+  }

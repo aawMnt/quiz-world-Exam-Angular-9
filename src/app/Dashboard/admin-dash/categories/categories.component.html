@@ -1,0 +1,26 @@
+<mat-card>
+
+
+    <mat-list>
+        <h1 class="cat">All Categories</h1>
+        <mat-list-item *ngFor="let obj of cat |  paginate: { currentPage: currentPage, itemsPerPage: itemsPerPage }" class="mt-4">
+            <mat-icon mat-list-icon>folder</mat-icon>
+            <div mat-line>{{obj.title}}</div>
+            <div mat-line>{{obj.description}}</div>
+            <button class="btn btn-danger" (click)="catDelete(obj)">Delete</button>
+        </mat-list-item>
+
+           <!-- pagination  -->
+    <div class="container text-center mt-4">
+        <pagination-controls (pageChange)="currentPage = $event" autoHide="true" responsive="true" class="my-pagination"
+            screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page">
+        </pagination-controls>
+    </div>
+    </mat-list>
+    <div class="container text-center">
+        <button mat-flat-button color="primary" routerLink="/adminDashboard/add-categories">Add new Categorie</button>
+    </div>
+
+
+
+</mat-card>

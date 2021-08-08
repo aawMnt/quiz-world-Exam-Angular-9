@@ -1,0 +1,7 @@
+.example-header-image {
+    background-image: url('../../../../assets/img/exam.png');
+    background-size: cover;
+  }
+  .my-pagination /deep/ .ngx-pagination .current {
+    background: #ab003c;
+  }

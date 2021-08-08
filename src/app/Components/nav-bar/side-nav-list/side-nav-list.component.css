@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+body{
+    background-color:  
+    #3f51b5;
+    padding-top: 10vh;
+}
+.page-title{
+    text-align: center;
+    /* font-weight: bold; */
+    font-family: 'Lobster', cursive;
+    color: #ed4b82;
+    font-size: 30px;
+    
+}
+.mat-card{
+    background-color:  #90caf9;
+}
+.mat-card mat-nav-list a{
+    color: #b28704;
+    font-family: 'Cinzel', serif;
+    
+    }

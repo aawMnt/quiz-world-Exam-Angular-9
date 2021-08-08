@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="bootstrap-wrapper">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-6 offset-md-3">
+                    <mat-card class="mt-3">
+                        <div class="container text-center">
+
+                            <img src="../../../assets/img/Contacts.png" height="150px">
+                        </div>
+                        <h1 class="singn-up">Sign up</h1>
+                        <!-- ***********************************************form start*************************************************************************** -->
+                        <form [formGroup]="singupfrom">
+
+
+                            <!-- username -->
+                            <mat-form-field appearance="legacy" style="width: 100%;">
+                                <mat-label>Enter Username</mat-label>
+                                <input matInput placeholder="username" formControlName="username">
+                                <mat-hint style="color: orangered;">please enter Unique Username</mat-hint>
+                            </mat-form-field>
+
+                              <!-- username validations -->
+
+                              <div class="alert alert-warning" *ngIf="singupfrom.get('username').hasError('maxlength')">
+                                Maximum 12 Character Allow in User Name
+                            </div>
+
+
+
+
+
+
+                            <!-- password -->
+                            <mat-form-field appearance="legacy" style="width: 100%;">
+                                <mat-label>Enter Password</mat-label>
+                                <input type="password" matInput placeholder="password" formControlName="password">
+                            </mat-form-field>
+
+                           <!-- validation for password  -->
+                            <div class="alert alert-warning" *ngIf="singupfrom.get('password').hasError('maxlength')">
+                                Maximum 20 Character Allow in Password
+                            </div>
+
+
+
+
+
+
+
+                            <!-- firstname -->
+                            <mat-form-field appearance="legacy" style="width: 100%;">
+                                <mat-label>Enter Firstname</mat-label>
+                                <input matInput placeholder="firstname" formControlName="firstName" >
+                            </mat-form-field>
+                            <!-- lastname -->
+                            <mat-form-field appearance="legacy" style="width: 100%;">
+                                <mat-label>Enter Lastname</mat-label>
+                                <input matInput placeholder="lastname" formControlName="lastName" >
+                            </mat-form-field>
+
+                            <!-- email -->
+                            <mat-form-field appearance="legacy" style="width: 100%;">
+                                <mat-label>Enter Email</mat-label>
+                                <input type="email" matInput placeholder="email" formControlName="email" >
+                            </mat-form-field>
+                               
+                            <!-- validation for email  -->
+                            <div class="alert alert-warning" *ngIf="singupfrom.get('email').hasError('email')">
+                                Enter Valid Email...
+                            </div>
+
+
+
+                            <!-- phone no. -->
+
+                            <mat-form-field appearance="legacy" style="width: 100%;">
+                                <!-- <mat-label></mat-label>
+                                <input type="number" matInput placeholder="phone No." > -->
+
+
+
+                                <mat-label>Enter Phone no.</mat-label>
+                                <span matPrefix>+91 &nbsp;</span>
+                                <input type="tel" matInput placeholder="555-555-1234" formControlName="phoneNo">
+                                <mat-icon matSuffix>mode_edit</mat-icon>
+                            </mat-form-field>
+
+                           <!-- validation for mobile -->
+
+                           <div class="alert alert-warning" *ngIf="singupfrom.get('phoneNo').hasError('pattern')">
+                                  Enter Valid Mobile Number.
+                           </div>
+
+
+
+
+
+                            <!-- button -->
+                            <div class="container text-center">
+                                <button mat-raised-button color="primary" (click)="signupsubmit()"
+                                    [disabled]="singupfrom.invalid">Registre</button>&nbsp;&nbsp;&nbsp;
+                                <button mat-raised-button color="accent" (click)="reset()">Reset</button>
+                            </div>
+
+                        </form>
+                    </mat-card>
+                    <!-- *************************************************form end*****************************************************************************               -->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<app-footer></app-footer>

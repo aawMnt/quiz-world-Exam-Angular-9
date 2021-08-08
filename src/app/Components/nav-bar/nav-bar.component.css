@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  h1 {
+    /* animation: blinker 1s linear infinite; */
+    color: chartreuse;
+    font-family: 'Philosopher', sans-serif;
+    letter-spacing: 3px;
+  }
+  
+  /* @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  } */
+
+
+
+  mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 250px;
+}
+
+main {
+    padding: 10px;
+}
+
+
+
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover, a:active{
+  color: lightgray;
+}
+
+.navigation-items{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+mat-toolbar{
+  border-radius: 3px;
+}
+
+@media(max-width: 959px){
+  mat-toolbar{
+      border-radius: 0px;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+img{
+  height: 30px;
+}
+
+}

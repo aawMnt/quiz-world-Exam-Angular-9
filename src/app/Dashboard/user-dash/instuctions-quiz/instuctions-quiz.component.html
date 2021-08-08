@@ -1,0 +1,43 @@
+<div class="bootstap-wrapper">
+    <div class="container">
+        <div class="row">
+            <mat-card class="w-100" id="mat-card">
+                
+                    <div class="mat-title">
+                        Read the instructions this page carefully.
+                    </div>
+                    <div class="mat-card-subtitle">
+                        start quiz very soon
+                    </div>
+                        
+                    <mat-card-content id="instructionsQuiz">
+                    <h1> {{quiz.title}} </h1>
+                    <p>{{quiz.description}}</p>
+
+                    <mat-divider></mat-divider>
+
+                    <h1 class="mt-4">Instructions</h1>
+
+                    <ul>
+                         <!-- {{totalMarks}} -->
+                        <li>Read All Questions Carefully</li>
+                        <li>Total Marks is:&nbsp;<b>{{quiz.maxMarks}}</b></li>
+                        <li> You have <b>{{quiz.numberOfQuestions * 1}} Minutes</b></li>
+                        <li>there are <b>{{quiz.numberOfQuestions}} questions</b></li>
+                        <li>Each questions <b>{{quizMarkes}} marks</b> </li>
+                        <li><b style="color: red;">Do not Realod page And Do not Switch the Tabs</b></li>
+                    </ul>
+                </mat-card-content>
+
+                <mat-card-actions class="text-center">
+                    <!-- [routerLink]=" '/start/' + qid " -->
+                    <button mat-flat-button color="primary" (click)="start()">Start</button>
+                </mat-card-actions>
+
+                <div class="container">
+
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

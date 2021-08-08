@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <!-- {{b | json}} -->
+    <mat-card>
+        <h1 style="color: #00b8d4; text-align: center; font-weight: bold;">Add New Quiz</h1>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form #qForm="ngForm" (ngSubmit)="qClick(qForm);qForm.reset();" >
+
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Enter Title</mat-label>
+                            <input matInput placeholder="title" [(ngModel)]="qFrom.title" name="title" required>
+                            <mat-icon matSuffix>title</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Add Description</mat-label>
+                            <textarea matInput style="padding-bottom: 100px;" [(ngModel)]="qFrom.description" name="description" required ></textarea>
+                            <mat-icon matSuffix>description</mat-icon>
+                        </mat-form-field><br>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field appearance="outline" class="w-50">
+                                    <mat-label>Number Of Question</mat-label>
+                                    <input type="number" matInput placeholder="question"
+                                    [(ngModel)]="qFrom.numberOfQuestions" name="numberOfQuestions">
+                                    <mat-icon matSuffix> not_listed_location</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field appearance="outline" class="w-50">
+                                    <mat-label>Enter Max Marks</mat-label>
+                                    <input type="number" matInput placeholder="marks"   [(ngModel)]="qFrom.maxMarks" name="maxMarks" >
+                                    <mat-icon matSuffix> not_listed_location</mat-icon>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <!-- active filed -->
+                        <mat-slide-toggle class="example-margin mt-4 " [(ngModel)]="qFrom.active"  name="active" >
+                            Publish Status!
+                        </mat-slide-toggle><br>
+
+                        <!-- category select -->
+                        <mat-form-field appearance="fill" class="mt-4 w-100">
+                            <mat-label>Select Categories</mat-label>
+                            <mat-select [(ngModel)]="qFrom.category.id"  name="category" >
+                                <mat-option *ngFor="let obj of catg" [value]="obj.id">
+                                    {{obj.title}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary">Add</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+
+</body>
+
+</html>

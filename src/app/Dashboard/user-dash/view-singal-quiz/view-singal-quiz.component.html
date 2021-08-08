@@ -1,0 +1,52 @@
+<!-- <div class="container text-center">
+    <h1>View Quiz</h1>
+</div> -->
+
+<div class="container mt-4">
+    <mat-card>
+        <mat-card-title class="page-title">{{viewQuiz.title}}</mat-card-title>
+
+        <p class="page-des">{{viewQuiz.description}}</p>
+
+        <div class="container mt-4" id="level-text">
+            <b>rating knowledge levels</b>
+            <ul class="mt-2">
+                <li style="color: #1b5e20;">A+ : Your Knowledge Level is very superior intelligence</li>
+                <li style="color: #2e7d32;">A : Your Knowledge Level very high</li>
+                <li style="color: #388e3c;">B : Your Knowledge Level Above-average intelligence</li>
+                <li style="color: #afb42b;">C : Your Knowledge Level Average intelligence</li>
+                <li style="color: #f44336;">C- : Your Knowledge Level Low-average intelligence</li>
+                <li style="color: red;">F : Your Knowledge Level Extremely low intelligence</li>
+            </ul>
+        </div>
+
+        <div class="container text-center">
+            <div class="row ">
+                <div class="col-md-6 mt-2">
+                    <b>Total Marks</b> : <button mat-flat-button color="accent"
+                        style="cursor: context-menu;">{{viewQuiz.maxMarks}}</button>
+
+                </div>
+                <div class="col-md-6 mt-2">
+                    <b>Total Number Questions</b> : <button mat-flat-button color="accent"
+                        style="cursor: context-menu;">{{viewQuiz.numberOfQuestions}}</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container text-center">
+            <button mat-fab color="warn" routerLink="/userDashboard/0">
+                <mat-icon>home</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+</div>
+
+
+
+
+
+<!-- {{quizd}}
+{{quizTitle}} -->

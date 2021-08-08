@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <mat-card>
+        <h1 style="color: #00b8d4; text-align: center; font-weight: bold;">Add New Categories</h1>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-10 offset-md-1 mt-4">
+                    <form [formGroup]="addcatForm">
+
+                        <mat-form-field appearance="outline" style="width: 70%;">
+                            <mat-label>Add Title</mat-label>
+                            <input matInput placeholder="title" autofocus formControlName="title">
+                            <mat-icon matSuffix>title</mat-icon>
+                        </mat-form-field>&nbsp; &nbsp;
+
+                        <mat-form-field appearance="outline" style="width: 70%;">
+                            <mat-label>Add Description</mat-label>
+                            <textarea matInput style="padding-bottom: 300px;" formControlName="description"></textarea>
+                            <mat-icon matSuffix>description</mat-icon>
+                        </mat-form-field><br>
+
+                        <div class="container text-center mr-4">
+                            <button mat-flat-button color="accent" (click)="addSubmit()"
+                                [disabled]="addcatForm.invalid">
+                                &nbsp;&nbsp;&nbsp;&nbsp; Add &nbsp;&nbsp;&nbsp;&nbsp;
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+
+
+
+
+
+</body>
+
+</html>

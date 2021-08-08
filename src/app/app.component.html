@@ -1,0 +1,27 @@
+<ngx-ui-loader fgsType="three-strings" text="Loading..." textColor="#76ff03" fgsColor="#76ff03" fgsSize="150"
+    pbThickness="8" pbColor="#76ff03">
+</ngx-ui-loader>
+
+
+<div ngxUiLoaderBlurred blur="8">
+    <!-- This page content will be blurred/frosted when foreground loader is showed -->
+    <!-- <app-nav-bar></app-nav-bar> -->
+    <!-- <mat-sidenav-content fxFlexFill> -->
+        <!-- <router-outlet></router-outlet> -->
+      <!-- </mat-sidenav-content> -->
+      
+
+      <mat-sidenav-container>
+        <mat-sidenav #sidenav role="navigation">
+           <app-side-nav-list (sidenavClose)="sidenav.close()"></app-side-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <app-nav-bar (sidenavToggle)="sidenav.toggle()"></app-nav-bar>
+            <main>
+                <router-outlet></router-outlet>
+            </main>
+            
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+
+</div>

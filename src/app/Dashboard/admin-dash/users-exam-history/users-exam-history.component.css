@@ -1,0 +1,31 @@
+.mat-card{
+    background-color: 
+    #cfd8dc;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    
+}
+.mat-card table tbody tr td h2{
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+ }
+ #element-text{
+    color:#52b202;
+}
+.title h1{
+    color: #b28704;
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+.mat-card2 mat-card-title{
+    color: #b28704;
+    margin-top: 50px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #ab003c;
+  }

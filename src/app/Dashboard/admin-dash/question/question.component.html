@@ -1,0 +1,54 @@
+<h1 class="mt-4"> Questions of <b style="color:darkorange; text-transform: uppercase;">{{title}}</b></h1>
+
+<div class="bootstrap-wrapper">
+    <div class="row">
+
+        <div class="container text-center">
+            <button mat-flat-button color="primary" [routerLink]=" '/adminDashboard/add-question/' + quizid + '/' + title "> Add Questions</button>
+        </div>
+
+
+        <mat-card *ngFor="let obj of quesion | paginate: { currentPage: currentPage, itemsPerPage: itemsPerPage }; let i = index" class="w-100 mt-4" style="background-color: #b0bec5;">
+            <mat-card-content>
+
+                <p>
+                    <b> Q {{ 1 + itemsPerPage * (currentPage - 1) + i }}<samp class="ml-4" [innerHTML]="obj.content">{{obj.content}}</samp></b>
+                </p>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>1){{obj.option1}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>2){{obj.option2}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>3){{obj.option3}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>4){{obj.option4}}</p>
+                        </div>
+
+                    </div>
+                    <mat-divider></mat-divider>
+                    <b>Correnct Ans is: </b> {{obj.ans}}
+                </div>
+                <div class="container mt-3">
+                    <button mat-flat-button color="warn" (click)="dltQ(obj.id)">Delete</button>
+                    <button mat-flat-button color="accent" class="ml-4" (click)="updateQ(obj.id,quizid,title)">Update</button>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+
+         <!-- pagination-controls  -->
+         <div class="container text-center mt-4">
+            <pagination-controls (pageChange)="currentPage = $event" autoHide="true" responsive="true"
+                class="my-pagination" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page">
+            </pagination-controls>
+        </div>
+
+
+    </div>
+</div>

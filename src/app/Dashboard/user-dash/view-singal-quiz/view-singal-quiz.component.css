@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+.page-title{
+    margin-top: 40px;
+    text-align: center;
+    color: chocolate;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    text-transform: capitalize;
+    
+}
+.page-des{
+    margin-top: 50px;
+    font-family: 'Fira Sans', sans-serif;
+    word-spacing: 2px;
+    font-size: 15px;
+   color: #a31545;
+   text-transform: capitalize;
+}
+
+.mat-card{
+    background-color: 
+    #cfd8dc;
+}
+
+
+#level-text b{
+    text-transform: capitalize;
+    font-size: 20px;
+    font-family: 'Fira Sans', sans-serif;
+
+}
+#level-text ul li{
+    font-family: 'Fira Sans', sans-serif;
+
+}

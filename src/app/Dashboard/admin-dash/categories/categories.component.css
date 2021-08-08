@@ -1,0 +1,13 @@
+.cat{
+    
+    text-align: center;
+    text-transform: uppercase;
+    color:#00b8d4;
+    font-weight: bold;
+    /* text-shadow: 2px 2px mediumaquamarine; */
+
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #ab003c;
+  }

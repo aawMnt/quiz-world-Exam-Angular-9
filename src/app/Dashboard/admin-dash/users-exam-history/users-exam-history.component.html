@@ -1,0 +1,115 @@
+<div class="title">
+    <h1> Exam History</h1>
+</div>
+
+<!-- search box  -->
+<div class="row mt-4">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label style="color: yellowgreen;">Search...</mat-label>
+            <input matInput placeholder="Search by First Name or Last Name or Mobile number or email"
+                [(ngModel)]="adminHistory" (ngModelChange)="Search()">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<!-- search box end  -->
+
+
+<div *ngIf="!historyEmpety">
+
+    <div class="container-fluid"
+        *ngFor=" let obj of getAllHistory |  paginate: { currentPage: currentPage, itemsPerPage: itemsPerPage } ">
+        <mat-card class="mt-4" style="overflow-x:auto;">
+            <div class="row">
+                <div class="col-md-4">
+                    User Full Name:&nbsp;<span
+                        id="element-text">{{obj.users.firstName}}&nbsp;{{obj.users.lastName}}</span>
+                </div>
+                <div class="col-md-3">
+                    User Name:&nbsp;<span id="element-text">{{obj.users.username}}</span>
+                </div>
+                <div class="col-md-3">
+                    Exam Date:&nbsp; <span id="element-text">{{obj.examDate | date:"dd-MM-yyyy"}}</span>
+                </div>
+                <div class="col-md-2">
+                    Exam Time : &nbsp;<span id="element-text">{{obj.examDate | date:"hh:mm:ss,a"}}</span>
+                </div>
+            </div>
+            <mat-divider class="mt-2"></mat-divider>
+            <div class="row text-center mt-4">
+                <div class="col-md-4">
+                    Title:<span id="element-text">{{obj.title}}</span>
+                </div>
+                <div class="col-md-4">
+                    Phone No:<span id="element-text">{{obj.users.phoneNo}}</span>
+                </div>
+                <div class="col-md-4">
+                    Email:<span id="element-text">{{obj.users.email}}</span>
+                </div>
+            </div>
+            <mat-divider class="mt-2"></mat-divider>
+
+
+            <table class="table table-bordered mt-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Total Marks</th>
+                        <th scope="col">Marks You Got</th>
+                        <th scope="col">Correct Answer</th>
+                        <th scope="col">Attempt Questions</th>
+                        <th scope="col">your percentage</th>
+                        <th scope="col">Your Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td>
+                            <h2>{{obj.totalMarks}}</h2>
+                        </td>
+                        <td>
+                            <h2>{{obj.marksGot}}</h2>
+                        </td>
+                        <td>
+                            <h2>{{obj.correctAns}}</h2>
+                        </td>
+                        <td>
+                            <h2>{{obj.attempt}}</h2>
+                        </td>
+                        <td>
+                            <h2>{{obj.percentage}}%</h2>
+                        </td>
+                        <td>
+                            <h2><b>{{obj.grade}}</b></h2>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="container text-center">
+                <button mat-fab color="warn" (click)="delete(obj.rid)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-card>
+
+
+    </div>
+    <!-- pagination  -->
+    <div class="container text-center mt-4">
+        <pagination-controls (pageChange)="currentPage = $event" autoHide="true" responsive="true" class="my-pagination"
+            screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page">
+        </pagination-controls>
+    </div>
+</div>
+
+<!-- if  history empty -->
+<div class="container text-center" *ngIf="historyEmpety" style="margin-top: 50px; text-transform: capitalize;">
+    <mat-card class="mat-card2">
+        <img src="../../../../assets/img/empty-box.png" alt="" height="200px">
+        <mat-card-title> exam history is empty</mat-card-title>
+    </mat-card>
+</div>

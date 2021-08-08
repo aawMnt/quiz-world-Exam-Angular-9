@@ -1,0 +1,44 @@
+<h1 style="color: #00b8d4; text-align: center; "> <b> View Quiz</b> </h1>
+<mat-card *ngFor="let obj of quizs | paginate: { currentPage: currentPage, itemsPerPage: itemsPerPage }" class="mt-4">
+
+
+
+    <mat-card-header>
+
+        <div mat-card-avatar class="example-header-image">
+
+        </div>
+        <mat-card-title>
+            {{obj.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{obj.category.title}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{obj.description}}</p>
+    </mat-card-content>
+    <mat-card-content>
+        <!-- [routerLink] =" '/adminDashboard/question/' + obj.id + '/' + obj.title  " -->
+        <button mat-stroked-button color="warn" (click)="QuitionsinQuiz(obj.id,obj.title)">Questions</button>
+        <button mat-stroked-button color="warn" class="ml-4">{{obj.maxMarks}}</button>
+        <button mat-stroked-button color="warn" class="ml-4">{{obj.numberOfQuestions}}</button>
+        <button mat-stroked-button color="primary" class="ml-4" (click)="updateQuiz(obj.id)">Update</button>
+        <button mat-stroked-button color="primary" class="ml-4">Question Attempts</button>
+        <button mat-fab color="accent" aria-label="Example icon button with a delete icon" class="ml-4"
+            (click)="qDelete(obj.id)" style="height: 70px; width: 70px; color: black;">
+            <mat-icon>delete</mat-icon>Delete
+
+        </button>
+    </mat-card-content>
+
+</mat-card>
+<div class="container text-center mt-4">
+    <pagination-controls (pageChange)="currentPage = $event" autoHide="true" responsive="true" class="my-pagination"
+        screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page">
+    </pagination-controls>
+</div>
+
+<div class="container text-center mt-4">
+    <button mat-flat-button color="primary" routerLink="/adminDashboard/add-quiz" class="mb-4">Add new Quiz</button>
+</div>

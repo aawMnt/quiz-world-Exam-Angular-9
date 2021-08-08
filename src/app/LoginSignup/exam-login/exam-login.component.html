@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-6 offset-md-3">
+                    <mat-card class="mt-5" id="card">
+                        <div class="container text-center">
+                            <img src="../../../assets/img/login.png" height="150px">
+                        </div>
+
+                        <h1 class="log-in">Log In</h1>
+                        <form [formGroup]="loginform">
+
+                        
+                            <!-- username  -->
+                            <mat-form-field appearance="legacy" style="width: 100%;" >
+                                <mat-label for="username">Enter Username</mat-label>
+                                <input matInput placeholder="username" formControlName="username" name="username"
+                                    id="username">
+                                    <mat-icon matSuffix>login</mat-icon>
+                                    <mat-hint style="color: orangered;">Enter Valid Username</mat-hint>
+                            </mat-form-field><br><br><br>
+                           
+
+                            <!-- validation -->
+                            <div class="alert alert-danger"
+                                *ngIf="loginform.get('username').hasError('required') && loginform.get('username').touched">
+                                Enter Valid Username
+                            </div>
+
+
+
+                            <!-- password -->
+                            
+                            <mat-form-field appearance="legacy" style="width: 100%;">
+
+                                <mat-label>Enter Password</mat-label>
+                                <input type="password" matInput placeholder="password" formControlName="password">
+                                <mat-icon matSuffix>password</mat-icon>
+                            </mat-form-field>
+
+                            <!-- validation -->
+                            <div class="alert alert-danger"
+                                *ngIf="loginform.get('password').hasError('required') && loginform.get('password').touched">
+                                Enter Valid Password
+                            </div>
+
+
+                            <!-- button   -->
+
+                            <div class="container text-center mt-4">
+                                <button mat-raised-button color="primary" (click)="loginsubmit()"
+                                    [disabled]="!loginform.valid">Login</button>&nbsp;&nbsp;&nbsp;
+                                <button mat-raised-button color="accent" (click)="reset()">Reset</button>
+                               
+                            </div>
+
+
+                            
+
+                        </form>
+                    </mat-card>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

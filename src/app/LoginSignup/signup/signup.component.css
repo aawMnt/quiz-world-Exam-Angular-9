@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+body{
+    background-color:#f3e5f5;
+    padding-bottom: 20px;
+    height: 100vh;
+
+    
+}
+.singn-up{
+    text-align: center;
+    font-family: 'Carter One', cursive;
+    color: #2979ff;
+    font-size: 30px;
+}
+
+form  mat-form-field input{
+    font-family: 'Bree Serif', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 20px;
+    
+}

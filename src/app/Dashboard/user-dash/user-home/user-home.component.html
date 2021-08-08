@@ -1,0 +1,102 @@
+<!-- {{catg | json}} -->
+<div class="bootstrap-wrapper ">
+    <div class="container-fluid">
+        <div class="text-center" id="page-title">
+            <h1>Quizzes</h1>
+            <h3 style="color:darkgoldenrod">*Note:- MM :- Maximum Marks , Q :- Questions</h3>
+        </div>
+
+
+        <!-- search box  -->
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Search...</mat-label>
+                    <input matInput placeholder="search by Title or Maximum Marks" [(ngModel)]="searchTitle"
+                        (ngModelChange)="search()">
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <!-- search box end  -->
+
+
+        <div class="row mt-2" *ngIf="catg">
+
+            <div class="col-md-4"
+                *ngFor="let obj of catg | paginate: { currentPage: currentPage, itemsPerPage: itemsPerPage}">
+                <mat-card class="mt-4" id="card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>
+                            <p>{{obj.title}}</p>
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <p>{{obj.category.title}}</p>
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+
+                        <div class="col-10 text-truncate">
+                            {{obj.description}}
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6 text-center mt-2">
+                                <h1><span class="badge rounded-pill bg-success">MM:{{obj.maxMarks}}</span></h1>
+                            </div>
+                            <div class="col-md-6 text-center mt-2">
+                                <h1><span class="badge rounded-pill bg-info">Q:{{obj.numberOfQuestions}}</span></h1>
+                            </div>
+                        </div>
+                    </mat-card-content>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button mat-raised-button color="accent" class="w-100 mt-2"
+                                (click)="view(obj.id,obj.title)">View</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button mat-raised-button color="primary" [routerLink]=" '/userDashboard/ins/' + obj.id "
+                                class="w-100 mt-2">
+                                Start
+                            </button>
+                        </div>
+
+                    </div>
+
+                </mat-card>
+            </div>
+            <div class="container text-center mt-4">
+                <pagination-controls (pageChange)="currentPage = $event" autoHide="true" responsive="true"
+                    class="my-pagination" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page">
+                </pagination-controls>
+            </div>
+
+            <div class="col-md-12 text-center" *ngIf="catg.length == 0">
+                <mat-card>
+                    <mat-card-content>
+
+
+                        <div class="row">
+
+                            <div class="col-md-2">
+                                <mat-icon style="font-size: 70px; color:orange">
+                                    sentiment_very_dissatisfied
+                                </mat-icon>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <h1 style="color: orangered;">Sorry...No Data Available in this Category</h1>
+                            </div>
+
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
