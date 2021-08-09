@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginsignupserviceService } from './../../Services/loginsignupservice.service';
@@ -14,7 +15,7 @@ export class SignupComponent implements OnInit {
   singupfrom: FormGroup;
 
   constructor(private signbuider: FormBuilder, private signservice: LoginsignupserviceService,
-    private snk: MatSnackBar) { }
+    private snk: MatSnackBar , private _router :Router) { }
 
   ngOnInit(): void {
     this.singupfrom = this.signbuider.group({
@@ -44,8 +45,11 @@ export class SignupComponent implements OnInit {
       // console.log(data);
 
       if(data !=null){
-        Swal.fire("Success", "Regisetreation Successfull...Thankyou.!!!", "success");
-      this.singupfrom.reset();
+        Swal.fire("Success", "Regisetreation Successfull...Thankyou.!!!", "success").then(res=>{
+            this._router.navigate(['login']);
+            this.singupfrom.reset();
+        })
+      
       }else{
         this.snk.open("Sorry ...User is Already Exist, please select unique username...!!!", 'ok', {
           duration: 5000,
